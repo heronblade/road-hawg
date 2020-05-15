@@ -20,3 +20,8 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+
+Use https://4rsmokehouse.com/ for inspiration
+
+Put navigation buttons on the bottom for mobile
