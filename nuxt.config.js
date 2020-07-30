@@ -1,5 +1,34 @@
 module.exports = {
-  mode: 'universal',
+  /*
+   ** Axios module configuration
+   ** See https://axios.nuxtjs.org/options
+   */
+  axios: {},
+  /*
+   ** Build configuration
+   */
+  build: {
+    transpile: [/^element-ui/],
+    /*
+     ** You can extend webpack config here
+     */
+    extend(config, ctx) {}
+  },
+  /*
+   ** Nuxt.js dev-modules
+   */
+  buildModules: [
+    // Doc: https://github.com/nuxt-community/eslint-module
+    '@nuxtjs/eslint-module'
+  ],
+  /*
+   ** Global CSS
+   */
+  css: [
+    // SCSS file in the project
+    '@/assets/scss/main.scss',
+    'element-ui/lib/theme-chalk/index.css'
+  ],
   /*
    ** Headers of the page
    */
@@ -19,26 +48,8 @@ module.exports = {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
-  /*
-   ** Global CSS
-   */
-  css: [
-    // SCSS file in the project
-    '@/assets/scss/main.scss',
-    'element-ui/lib/theme-chalk/index.css'
-  ],
-  /*
-   ** Plugins to load before mounting the App
-   */
-  plugins: ['@/plugins/element-ui'],
-  /*
-   ** Nuxt.js dev-modules
-   */
-  buildModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
-  ],
+  loading: { color: '#ddd' },
+  mode: 'universal',
   /*
    ** Nuxt.js modules
    */
@@ -50,18 +61,10 @@ module.exports = {
     '@nuxtjs/dotenv'
   ],
   /*
-   ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
+   ** Plugins to load before mounting the App
    */
-  axios: {},
-  /*
-   ** Build configuration
-   */
-  build: {
-    transpile: [/^element-ui/],
-    /*
-     ** You can extend webpack config here
-     */
-    extend(config, ctx) {}
+  plugins: ['@/plugins/element-ui'],
+  router: {
+    linkExactActiveClass: 'exact-active-link'
   }
-}
+};
